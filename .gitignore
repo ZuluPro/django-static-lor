@@ -1,0 +1,5 @@
+*.pyc
+*.sw[po]
+build/
+dist/
+django_lor.egg-info
