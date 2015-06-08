@@ -4,7 +4,7 @@ import os
 import warnings
 from django import template
 from django.conf import settings as se
-from lor.settings import FILES_URLS
+from lor.settings import FILES_URLS, USE_LOCAL_URLS
 
 register = template.Library()
 
@@ -15,7 +15,7 @@ def lor_url(file_name):
         warnings.warn("'%s' not defined." % file_name)
         return ''
     file_matches = FILES_URLS[file_name]
-    if se.DEBUG or se.DEBUG_TEMPLATE:
+    if USE_LOCAL_URLS:
         return os.path.join(se.STATIC_URL, file_matches[0])
     elif len(file_matches) > 1 or file_matches[1]:
         return file_matches[1]

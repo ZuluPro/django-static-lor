@@ -34,8 +34,8 @@ setup(
         'Programming Language :: Python :: 3.2',
         'Programming Language :: Python :: 3.3',
     ],
-    packages=find_packages(exclude=['lor.tests']),
+    packages=find_packages(exclude=['tests.runtests.main']),
     include_package_data=True,
-    test_suite='lor.tests',
+    test_suite='tests.runtests.main',
     install_requires=['Django>=1.6']
 )

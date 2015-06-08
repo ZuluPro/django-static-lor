@@ -15,6 +15,8 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument('-i', '--noinput', action='store_true')
+        # parser.add_argument('-o', '--noinput', action='store_true')
+        # parser.add_argument('-f', '--files')
 
     def handle(self, *args, **opts):
         noinput = opts.get('noinput', False)
