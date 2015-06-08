@@ -16,8 +16,10 @@ def lor_url(file_name):
         return ''
     file_matches = FILES_URLS[file_name]
     if USE_LOCAL_URLS:
+        if not file_matches[0]:
+            return ''
         return os.path.join(se.STATIC_URL, file_matches[0])
-    elif len(file_matches) > 1 or file_matches[1]:
+    elif len(file_matches) > 1 and file_matches[1]:
         return file_matches[1]
     else:
         warnings.warn("No local '%s' defined.")
