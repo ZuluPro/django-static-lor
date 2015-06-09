@@ -1,5 +1,6 @@
 import os
 from setuptools import setup, find_packages
+import lor
 
 try:
     f = open(os.path.join(os.path.dirname(__file__), 'README.rst'))
@@ -10,9 +11,10 @@ except IOError:
 
 setup(
     name='django-static-lor',
-    version='1.0',
-    url="",
-    description="",
+    version=lor.__version__,
+    url="https://github.com/ZuluPro/django-static-lor",
+    description="""LoR as 'Local or Remote' is a useful tool for manage static
+    files between testing and production.""",
     long_description=long_description,
     author='ZuluPro (Anthony MONTHE)',
     author_email='anthony.monthe@gmail.com',
@@ -22,6 +24,7 @@ setup(
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
+        'Environment :: Console',
         'Framework :: Django',
         'Intended Audience :: Developers',
         'Natural Language :: English',
@@ -33,6 +36,7 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.2',
         'Programming Language :: Python :: 3.3',
+        'Framework :: Django',
     ],
     packages=find_packages(exclude=['tests.runtests.main']),
     include_package_data=True,
