@@ -32,3 +32,6 @@ class LorStorage(DefaultStorage):
         files = [] if not hasattr(DefaultStorage, 'post_process') else \
             super(LorStorage, self).post_process(paths, *args, **kwargs)
         return files
+
+    def url(self, path):
+        return self.__class__().url(path)
